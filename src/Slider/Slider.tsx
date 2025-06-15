@@ -32,10 +32,10 @@ const Slider = () => {
     return (
         <div>
             <div className='flex justify-between absolute '>
-                <button className='w-[40px] h-[40px] ml-[16px] mt-[198px]' onClick={nextImage}>
+                <button className=' w-[40px] h-[40px] ml-[16px] mt-[198px] z-10 ' onClick={nextImage}>
                     <img className='' src={leftSlideIcon} alt="leftSlideIcon" />
                 </button>
-                <button className=' w-[40px] h-[40px] ml-[290px] mt-[198px]' onClick={backImage}>
+                <button className=' w-[40px] h-[40px] ml-[290px] mt-[198px] z-10' onClick={backImage}>
                     <img className='' src={rightSlideIcon} alt="leftSlideIcon" />
                 </button>
             </div>

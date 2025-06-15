@@ -2,13 +2,17 @@ import burgerIcon from "../assest/burger.svg"
 import cartIcon from "../assest/headerCartIcon.svg"
 import avatarIcon from "../assest/profileImg.svg"
 import logoIcon from "../assest/logo.svg"
+import { useState } from "react"
+import MenuBar from "../menuBar/MenuBar"
 
 const Header = () => {
+  const [showMenu, setShowMenu] = useState(false)
   return (
     <>
-      <div className=" justify-between px-5 py-4  flex w-[400px] 	border-2 ">
+      {showMenu && <MenuBar closeButtonOnclick={() => setShowMenu(false)} />}
+      <div className=" justify-between px-5 py-4  flex w-[400px]   ">
         <div className="flex">
-          <img className="w-[15px] h-[15px] mt-[5px]" src={burgerIcon} alt="" />
+          <img onClick={() => setShowMenu(true)} className="w-[15px] h-[15px] mt-[5px]" src={burgerIcon} alt="" />
           <img className="w-[137px] h-[20px] ml-5" src={logoIcon} alt="logoIcon" />
         </div>
         <div >
@@ -18,6 +22,7 @@ const Header = () => {
           </ul>
         </div>
       </div>
+
     </>
   )
 }
